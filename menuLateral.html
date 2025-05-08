@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Lateral</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-[#eef1ea]">
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="h-screen bg-[#2c2c2c] text-white transition-all duration-300 flex flex-col pt-4 shadow-lg w-20 hover:w-64 overflow-hidden">
+      <!-- Home (Destacado) -->
+      <div class="flex items-center px-4 py-3 bg-[#1fa124] rounded-r-full mb-2">
+        <i data-feather="home" class="w-5 h-5"></i>
+        <span class="ml-4 font-medium hidden sidebar-text">Home</span>
+      </div>
+      <!-- Demais itens -->
+      <div class="flex flex-col gap-4 px-4">
+        <div class="flex items-center gap-4">
+          <i data-feather="users" class="w-5 h-5"></i>
+          <span class="hidden sidebar-text">Usuário</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i data-feather="message-circle" class="w-5 h-5"></i>
+          <span class="hidden sidebar-text">Mensagens</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i data-feather="settings" class="w-5 h-5"></i>
+          <span class="hidden sidebar-text">Configurações</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i data-feather="help-circle" class="w-5 h-5"></i>
+          <span class="hidden sidebar-text">Ajuda</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i data-feather="lock" class="w-5 h-5"></i>
+          <span class="hidden sidebar-text">Senha</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i data-feather="log-out" class="w-5 h-5"></i>
+          <span class="hidden sidebar-text">Sair</span>
+        </div>
+      </div>
+    </div>
+    <!-- Conteúdo principal -->
+    <div class="flex-1 p-10">
+      <h1 class="text-2xl font-bold">Conteúdo principal</h1>
+    </div>
+  </div>
+
+  <script>
+    feather.replace();
+    // Alternar texto visível ao passar o mouse
+    const sidebar = document.getElementById('sidebar');
+    sidebar.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.sidebar-text').forEach(el => el.classList.remove('hidden'));
+    });
+    sidebar.addEventListener('mouseleave', () => {
+      document.querySelectorAll('.sidebar-text').forEach(el => el.classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>
